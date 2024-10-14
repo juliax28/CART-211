@@ -1,0 +1,112 @@
+body {
+    background-color: #fcbedd;
+}
+
+.navigation {
+    border: 3px;
+    color: #ff69b4;
+    text-align: center;
+}
+
+a {
+    color: #ffb6c1;
+}
+
+a:hover {
+    color: #fc6283;
+}
+
+.button1 {
+    border-color: #ffb6c1;
+    color: #ff69b4;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #ffb6c1;
+
+}
+
+
+.button1:hover {
+    border-color: #ffb6c1;
+    color: #ff69b4;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #fc6283;
+
+}
+
+.sidebar {
+    height: calc(100vh - 40px);
+    /* Subtract top and bottom margin */
+    width: 180px;
+    /* Reduced width to account for padding and border */
+    position: fixed;
+    top: 20px;
+    /* Add top margin */
+    right: 20px;
+    /* Add right margin */
+    background-color: #ffb6c1;
+    padding: 20px 10px;
+    /* Add border */
+    border-radius: 10px;
+    /* Optional: rounded corners */
+}
+
+ul {
+    background-color: #ffb6c1;
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/*FLEXBOX ATTRIBUTES
+/*JULIE PROFILE CONTENT*/
+
+.JulieProfileContainer {
+
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    border-radius: 15px;
+}
+
+#ProfileBox01 {
+    background-color: #ff69b4;
+    height: 300px;
+    width: 300px;
+
+}
+
+#ProfileBox02 {
+    background-color: aliceblue;
+    height: 300px;
+    width: 900px;
+}
+
+.RulesContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#RulesBox {
+    background-color: rgb(250, 234, 234);
+    height: 1000px;
+    width: 1200px;
+}
