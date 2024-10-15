@@ -98,15 +98,24 @@ ul {
     background-color: aliceblue;
     height: 300px;
     width: 900px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
 }
 
 .RulesContainer {
     display: flex;
     justify-content: center;
+
 }
 
 #RulesBox {
     background-color: rgb(250, 234, 234);
     height: 1000px;
     width: 1200px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
 }
