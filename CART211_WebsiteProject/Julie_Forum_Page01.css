@@ -77,7 +77,7 @@ ul {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: #ffb6c1;
+    background-color: #fcbedd;
     padding: 20px;
     row-gap: 10px;
     justify-content: center;
@@ -102,7 +102,7 @@ ul {
 }
 
 .CommentSect {
-    background-color: #ff69b4;
+    background-color: #fff2f2;
     width: 150px;
     height: 150px;
 }
@@ -111,16 +111,24 @@ ul {
 
     width: 200px;
     height: 200px;
+    align-content: center;
+    border-color: #ff69b4;
+    border-style: double;
 }
 
 #Comment {
 
     width: 1000px;
     height: 200px;
+    align-content: center;
+    border-color: #ff69b4;
+    border-style: double;
 }
 
 #Stats {
 
     width: 150px;
     height: 200px;
+    border-color: #ff69b4;
+    border-style: double;
 }
