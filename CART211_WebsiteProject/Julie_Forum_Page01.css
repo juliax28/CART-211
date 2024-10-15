@@ -89,3 +89,38 @@ ul {
     padding: 20px;
 
 }
+
+/*FLEXBOX STYLING FOR FORUM COMMENTS*/
+
+.ThreadContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.CommentBox {
+    display: flex;
+}
+
+.CommentSect {
+    background-color: #ff69b4;
+    width: 150px;
+    height: 150px;
+}
+
+#Profile {
+
+    width: 200px;
+    height: 200px;
+}
+
+#Comment {
+
+    width: 1000px;
+    height: 200px;
+}
+
+#Stats {
+
+    width: 150px;
+    height: 200px;
+}
