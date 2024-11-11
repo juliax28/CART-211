@@ -1,5 +1,13 @@
 body {
-    background-color: #fcbedd;
+    background-image: url("images/bg02.jpg");
+}
+
+
+
+
+h1 {
+    color: #0000;
+    font-size: xx-large;
 }
 
 .navigation {
@@ -8,17 +16,16 @@ body {
     text-align: center;
 }
 
-a {
-    color: #ffb6c1;
-}
-
-a:hover {
-    color: #fc6283;
+.MainTitle {
+    border: 3px;
+    color: #000000;
+    text-align: center;
 }
 
 .button1 {
-    border-color: #ffb6c1;
-    color: #ff69b4;
+    border-color: #000000;
+    border-radius: 15px;
+    color: #000000;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -27,14 +34,13 @@ a:hover {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: #ffb6c1;
+    background-color: #ff70b3;
 
 }
 
-
 .button1:hover {
-    border-color: #ffb6c1;
-    color: #ff69b4;
+    border-color: #ffb6e1;
+    color: #ffffff;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -57,7 +63,7 @@ a:hover {
     /* Add top margin */
     right: 20px;
     /* Add right margin */
-    background-color: #ffb6c1;
+    background-color: #ffb6e1;
     padding: 20px 10px;
     /* Add border */
     border-radius: 10px;
@@ -65,7 +71,7 @@ a:hover {
 }
 
 ul {
-    background-color: #ffb6c1;
+    background-color: #ffb6e1;
     list-style-type: none;
     margin: 10px 0;
     padding: 15px;
@@ -84,7 +90,7 @@ ul {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: #ffb6c1;
+    background-color: #ffb6e1;
     padding: 20px;
     row-gap: 10px;
     border-top: 1px solid #fff2f2
