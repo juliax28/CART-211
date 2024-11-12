@@ -125,3 +125,8 @@ ul {
     padding-right: 20px;
     padding-top: 20px;
 }
+
+.ErrorBlock {
+    display: flex;
+    justify-content: center;
+}
