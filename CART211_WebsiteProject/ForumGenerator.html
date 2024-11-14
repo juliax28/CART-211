@@ -1,0 +1,189 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Forum</title>
+
+    <!-- Firebase SDK for v8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+    <style>
+        /* Add your CSS here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #forum-container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .post, .comment {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .comments-section {
+            margin-top: 10px;
+        }
+
+        input, textarea, button {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        h1, h2, h4 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="forum-container">
+        <h1>Simple Forum</h1>
+        
+        <!-- New Thread Form -->
+        <div id="post-form">
+            <h2>New Thread</h2>
+            <input type="text" id="username" placeholder="Username">
+            <textarea id="content" placeholder="Enter your post..."></textarea>
+            <button onclick="addPost()">Post</button>
+        </div>
+
+        <!-- List of Posts -->
+        <h2>Threads</h2>
+        <div id="posts"></div>
+    </div>
+
+    <script>
+        /// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyBbgEJstWzhmx4IINKDW6woGedOBXC0uyw",
+        authDomain: "forum-page-admin.firebaseapp.com",
+        databaseURL: "https://forum-page-admin-default-rtdb.firebaseio.com",
+        projectId: "forum-page-admin",
+        storageBucket: "forum-page-admin.firebasestorage.app",
+        messagingSenderId: "925755238859",
+        appId: "1:925755238859:web:3a20876dc29a1603886e4e",
+        measurementId: "G-QCDMKVGYGT"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Add a new post (Thread)
+        function addPost() {
+            const username = document.getElementById('username').value;
+            const content = document.getElementById('content').value;
+
+            if (username && content) {
+                db.collection('posts').add({
+                    username: username,
+                    content: content,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                .then(() => {
+                    document.getElementById('username').value = '';
+                    document.getElementById('content').value = '';
+                    loadPosts();
+                })
+                .catch((error) => {
+                    console.error("Error adding post: ", error);
+                });
+            } else {
+                alert("Please fill in both fields.");
+            }
+        }
+
+        // Fetch and display all posts
+        function loadPosts() {
+            const postsDiv = document.getElementById('posts');
+            postsDiv.innerHTML = '';
+
+            db.collection('posts').orderBy('timestamp', 'desc').get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const post = doc.data();
+                    const postId = doc.id;
+
+                    postsDiv.innerHTML += `
+                        <div class="post">
+                            <h3>${post.username}</h3>
+                            <div class="post-content">${post.content}</div>
+                            <div class="post-footer">
+                                Posted on: ${new Date(post.timestamp.seconds * 1000).toLocaleString()}
+                            </div>
+                            <div class="comments-section" id="comments-${postId}">
+                                <h4>Comments:</h4>
+                                <input type="text" placeholder="Add a comment..." id="comment-input-${postId}">
+                                <button onclick="addComment('${postId}')">Comment</button>
+                                <div id="comment-list-${postId}"></div>
+                            </div>
+                        </div>
+                    `;
+
+                    loadComments(postId); // Load comments for each post
+                });
+            });
+        }
+
+        // Add a comment to a specific post
+        function addComment(postId) {
+            const commentInput = document.getElementById(`comment-input-${postId}`);
+            const commentText = commentInput.value;
+
+            if (commentText) {
+                db.collection('posts').doc(postId).collection('comments').add({
+                    text: commentText,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                .then(() => {
+                    commentInput.value = '';
+                    loadComments(postId);  // Reload comments to display the new comment
+                })
+                .catch((error) => {
+                    console.error("Error adding comment: ", error);
+                });
+            } else {
+                alert("Please enter a comment.");
+            }
+        }
+
+        // Fetch and display comments for a specific post
+        function loadComments(postId) {
+            const commentListDiv = document.getElementById(`comment-list-${postId}`);
+            commentListDiv.innerHTML = ''; // Clear existing comments
+
+            db.collection('posts').doc(postId).collection('comments').orderBy('timestamp', 'asc').get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const comment = doc.data();
+
+                    commentListDiv.innerHTML += `
+                        <div class="comment">
+                            <div>${comment.text}</div>
+                            <small>${new Date(comment.timestamp.seconds * 1000).toLocaleString()}</small>
+                        </div>
+                    `;
+                });
+            });
+        }
+
+        // Load posts when the page loads
+        window.onload = loadPosts;
+    </script>
+</body>
+</html>
