@@ -104,3 +104,144 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+.topics {
+    padding: auto;
+    justify-content: center;
+    display: grid;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #ffb6e1;
+    padding: 20px;
+    row-gap: 10px;
+    border-top: 1px solid #fff2f2
+}
+
+
+
+.grid-item {
+    padding: 20px;
+}
+
+.gridTopicTitles {
+    font-size: 15px;
+    color: #ff69b4;
+}
+
+.gridStats {
+    font-size: 12px;
+    color: #ff69b4;
+
+}
+
+.gridActivity {
+    font-size: 10px;
+    color: #ff69b4;
+}
+
+
+.topics {
+    padding: auto;
+    justify-content: center;
+    display: grid;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #ffb6e1;
+    padding: 20px;
+    row-gap: 10px;
+    border-top: 1px solid #fff2f2
+}
+
+/*FLEXBOX STYLING FOR FORUM COMMENTS*/
+
+.ThreadContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.CommentBox {
+    display: flex;
+}
+
+.CommentSect {
+    background-color: #fff2f2;
+    width: 150px;
+    height: 150px;
+}
+
+#Profile {
+
+    width: 200px;
+    height: 200px;
+    align-content: center;
+    border-color: #ff69b4;
+    border-style: double;
+}
+
+#Comment {
+
+    width: 1000px;
+    height: 200px;
+    align-content: center;
+    border-color: #ff69b4;
+    border-style: double;
+}
+
+#Stats {
+
+    width: 150px;
+    height: 200px;
+    border-color: #ff69b4;
+    border-style: double;
+}
+
+/*JULIE PROFILE CONTENT*/
+
+.JulieProfileContainer {
+
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    border-radius: 15px;
+}
+
+#ProfileBox01 {
+    background-color: #ff69b4;
+    height: 300px;
+    width: 300px;
+
+}
+
+#ProfileBox02 {
+    background-color: aliceblue;
+    height: 300px;
+    width: 900px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.RulesContainer {
+    display: flex;
+    justify-content: center;
+
+}
+
+#RulesBox {
+    background-color: rgb(255, 255, 255);
+    height: 1000px;
+    width: 1200px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
