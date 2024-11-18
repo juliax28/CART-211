@@ -5,15 +5,9 @@ body {
 
 
 
-h1 {
-    color: #0000;
-    font-size: xx-large;
-}
 
-.navigation {
-    border: 3px;
-    color: #ff69b4;
-    text-align: center;
+#navigation {
+    padding-left: 300px;
 }
 
 .MainTitle {
@@ -75,19 +69,23 @@ h1 {
 
 .sidebar {
     height: calc(100vh - 40px);
-    /* Subtract top and bottom margin */
+
     width: 180px;
-    /* Reduced width to account for padding and border */
+
     position: fixed;
     top: 20px;
-    /* Add top margin */
+
     right: 20px;
-    /* Add right margin */
     background-color: #ffb6e1;
     padding: 20px 10px;
-    /* Add border */
+
     border-radius: 10px;
-    /* Optional: rounded corners */
+
+}
+
+.ActivitySidebarPosition {
+    display: flex;
+    justify-content: center;
 }
 
 ul {
@@ -100,6 +98,7 @@ ul {
     transition: all 0.3s ease;
 }
 
+/* Error Page*/
 .ErrorBlock {
     display: flex;
     justify-content: center;
@@ -244,4 +243,11 @@ ul {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+}
+
+/* HomePage Popular and recent forums stling*/
+
+#HomePageContent {
+    padding-left: 250px;
+
 }
