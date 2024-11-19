@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/bg02.jpg");
+    background-image: url("images/brickwallBG.gif");
 }
 
 
@@ -172,20 +172,25 @@ ul {
     background-color: #fff2f2;
     width: 150px;
     height: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 #Profile {
 
-    width: 200px;
+    width: 150px;
     height: 200px;
     align-content: center;
     border-color: #ff69b4;
     border-style: double;
+
 }
 
 #Comment {
 
-    width: 1000px;
+    width: 675px;
     height: 200px;
     align-content: center;
     border-color: #ff69b4;
@@ -198,6 +203,24 @@ ul {
     height: 200px;
     border-color: #ff69b4;
     border-style: double;
+
+}
+
+.status {
+    font-size: x-small;
+}
+
+.signature {
+    border-top-style: double;
+    border-top-color: #ff69b4;
+    font-size: small;
+    width: 500px;
+    height: 50px;
+}
+
+.PageNumbers {
+    display: flex;
+    justify-content: center;
 }
 
 /*JULIE PROFILE CONTENT*/
