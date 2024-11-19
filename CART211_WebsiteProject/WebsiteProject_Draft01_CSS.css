@@ -68,6 +68,8 @@ body {
 }
 
 .sidebar {
+    background-image: url("images/FallingHearts.gif");
+
     height: calc(100vh - 40px);
 
     width: 180px;
@@ -76,7 +78,7 @@ body {
     top: 20px;
 
     right: 20px;
-    background-color: #ffb6e1;
+
     padding: 20px 10px;
 
     border-radius: 10px;
@@ -158,11 +160,17 @@ ul {
 }
 
 /*FLEXBOX STYLING FOR FORUM COMMENTS*/
-
-.ThreadContainer {
+.ForumConversations {
     display: flex;
     justify-content: center;
 }
+
+.ThreadContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 .CommentBox {
     display: flex;
