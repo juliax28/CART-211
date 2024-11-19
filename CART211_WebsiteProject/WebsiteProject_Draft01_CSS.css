@@ -166,12 +166,11 @@ ul {
 
 .CommentBox {
     display: flex;
+    height: fit-content;
 }
 
 .CommentSect {
     background-color: #fff2f2;
-    width: 150px;
-    height: 150px;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
@@ -181,7 +180,6 @@ ul {
 #Profile {
 
     width: 150px;
-    height: 200px;
     align-content: center;
     border-color: #ff69b4;
     border-style: double;
@@ -191,7 +189,6 @@ ul {
 #Comment {
 
     width: 675px;
-    height: 200px;
     align-content: center;
     border-color: #ff69b4;
     border-style: double;
@@ -200,7 +197,6 @@ ul {
 #Stats {
 
     width: 150px;
-    height: 200px;
     border-color: #ff69b4;
     border-style: double;
 
