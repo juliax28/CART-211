@@ -48,11 +48,16 @@
     </div>
 
 
+
     <!---Main Content-->
     <div class="AboutContent">
         <div class="JulieProfileContainer">
             <div class="box" id=ProfileBox01>
-                <image src="images/blankpfp.png "></image>
+                <div class="popup" onclick="myFunction()">
+                    <image src="images/blankpfp.png "></image>
+                    <span class="popuptext" id="myPopup">Popup text...</span>
+                </div>
+
             </div>
             <div class="box" id=ProfileBox02>
                 <p>Name: Julie A.K.A. HeyItsJulie43</p>
@@ -139,3 +144,11 @@
 </body>
 
 </html>
+
+<script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>

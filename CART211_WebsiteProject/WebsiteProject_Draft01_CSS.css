@@ -272,6 +272,38 @@ ul {
     padding-top: 20px;
 }
 
+/* About Me Pop up for strange email*/
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 500px;
+    height: 250px;
+    background-color: #ff69b4;
+    text-align: center;
+
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+
+}
+
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
 /* HomePage Popular and recent forums stling*/
 
 #HomePageContent {
