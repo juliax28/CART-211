@@ -219,7 +219,7 @@ ul {
     border-top-color: #ff69b4;
     font-size: small;
     width: 500px;
-    height: 50px;
+    height: fit-content;
 }
 
 .PageNumbers {
