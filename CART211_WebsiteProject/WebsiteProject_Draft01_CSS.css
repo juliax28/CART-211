@@ -11,9 +11,11 @@ body {
 }
 
 .MainTitle {
-
+    display: flex;
+    justify-content: center;
     color: #3b0017;
     text-align: center;
+    background-color: #fcebf3;
 }
 
 .forumtopics {
@@ -84,6 +86,7 @@ body {
     display: flex;
     justify-content: right;
 
+
 }
 
 ul {
@@ -118,25 +121,28 @@ ul {
 }
 
 
-
+/* Grid used for threads*/
 .grid-item {
     padding: 20px;
 }
 
 .gridTopicTitles {
-    font-size: 15px;
-    color: #ff69b4;
+    font-size: 20px;
+    color: #da4880;
+    text-decoration: none;
 }
 
 .gridStats {
     font-size: 12px;
-    color: #ff69b4;
+    color: #da4880;
+    text-decoration: none;
 
 }
 
 .gridActivity {
-    font-size: 10px;
-    color: #ff69b4;
+    font-size: 15px;
+    color: #da4880;
+    text-decoration: none;
 }
 
 
@@ -144,15 +150,20 @@ ul {
     padding: auto;
     justify-content: center;
     display: grid;
+
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: #ffb6e1;
+    background-color: #ffdef1;
     padding: 20px;
     row-gap: 10px;
-    border-top: 1px solid #fff2f2
+    border-style: solid;
+    border-top-color: #ffffff;
+    border-right-color: #ff70b3;
+    border-left-color: #ffffff;
+    border-bottom-color: #e269a1;
 }
 
 /*FLEXBOX STYLING FOR FORUM COMMENTS*/
