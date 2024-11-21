@@ -5,7 +5,14 @@ body {
 
 
 /*Home Page styling*/
+/* HomePage Popular and recent forums styling*/
 
+#HomePageContent {
+    padding-left: 250px;
+
+}
+
+/*Place Buttons*/
 #navigation {
     padding-left: 300px;
 }
@@ -18,6 +25,7 @@ body {
     background-color: #fcebf3;
 }
 
+/*White boxes for the topics*/
 .forumtopics {
     border-style: ridge;
     border-color: #ff69b4;
@@ -38,7 +46,7 @@ body {
 
 
 
-
+/*Nav button styling*/
 .button1 {
     border-color: #000000;
     border-radius: 15px;
@@ -70,7 +78,7 @@ body {
 
 }
 
-
+/*Sidebar styling*/
 .sidebar {
     background-image: url("images/FallingHearts.gif");
     height: calc(100vh - 40px);
@@ -82,6 +90,7 @@ body {
 
 }
 
+/*Sidebar position*/
 .ActivitySidebarPosition {
     display: flex;
     justify-content: right;
@@ -89,6 +98,7 @@ body {
 
 }
 
+/*Inner boxes on sidebar*/
 ul {
     background-color: #ffb6e1;
     list-style-type: none;
@@ -104,6 +114,9 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+
+/* Grid used for threads page*/
 
 .topics {
     padding: auto;
@@ -121,7 +134,6 @@ ul {
 }
 
 
-/* Grid used for threads*/
 .grid-item {
     padding: 20px;
 }
@@ -146,12 +158,7 @@ ul {
 }
 
 
-.topics {
-    padding: auto;
-    justify-content: center;
-    display: grid;
 
-}
 
 .grid-container {
     display: grid;
@@ -172,18 +179,20 @@ ul {
     justify-content: center;
 }
 
+/* Contains all the content of the discussion*/
 .ThreadContainer {
     display: flex;
     flex-direction: column;
 }
 
-
+/* Where the conversation happens*/
 
 .CommentBox {
     display: flex;
     height: fit-content;
 }
 
+/* holds dialogue*/
 .CommentSect {
     background-color: #fff2f2;
     padding-left: 25px;
@@ -192,6 +201,7 @@ ul {
     padding-bottom: 25px;
 }
 
+/* Holds pfp, status, username*/
 #Profile {
 
     width: 150px;
@@ -201,6 +211,7 @@ ul {
 
 }
 
+/* Styling of the box holding the comment*/
 #Comment {
 
     width: 675px;
@@ -209,6 +220,7 @@ ul {
     border-style: double;
 }
 
+/*date written*/
 #Stats {
 
     width: 150px;
@@ -217,10 +229,12 @@ ul {
 
 }
 
+/* Font size for mod/admin/member info*/
 .status {
     font-size: x-small;
 }
 
+/* signature styling*/
 .signature {
     border-top-style: double;
     border-top-color: #ff69b4;
@@ -229,6 +243,7 @@ ul {
     height: fit-content;
 }
 
+/* Page nubmers on convo styling*/
 .PageNumbers {
     display: flex;
     justify-content: center;
@@ -280,6 +295,7 @@ ul {
 }
 
 /* About Me Pop up for strange email*/
+/* Code taken from W3 schools and altered*/
 
 /* Popup container */
 .popup {
@@ -318,12 +334,7 @@ ul {
     animation: fadeIn 1s
 }
 
-/* HomePage Popular and recent forums styling*/
 
-#HomePageContent {
-    padding-left: 250px;
-
-}
 
 /*Julie Video Download Page*/
 

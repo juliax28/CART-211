@@ -1,9 +1,12 @@
 !DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Forum</title>
+
+    <!---Disregarded Forum Generator-->
 
     <!-- Firebase SDK for v8 -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
@@ -29,7 +32,8 @@
             border-radius: 8px;
         }
 
-        .post, .comment {
+        .post,
+        .comment {
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 10px;
@@ -40,21 +44,26 @@
             margin-top: 10px;
         }
 
-        input, textarea, button {
+        input,
+        textarea,
+        button {
             margin-top: 10px;
             padding: 8px;
             border-radius: 4px;
         }
 
-        h1, h2, h4 {
+        h1,
+        h2,
+        h4 {
             color: #333;
         }
     </style>
 </head>
+
 <body>
     <div id="forum-container">
         <h1>Simple Forum</h1>
-        
+
         <!-- New Thread Form -->
         <div id="post-form">
             <h2>New Thread</h2>
@@ -71,14 +80,14 @@
     <script>
         /// For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-        apiKey: "AIzaSyBbgEJstWzhmx4IINKDW6woGedOBXC0uyw",
-        authDomain: "forum-page-admin.firebaseapp.com",
-        databaseURL: "https://forum-page-admin-default-rtdb.firebaseio.com",
-        projectId: "forum-page-admin",
-        storageBucket: "forum-page-admin.firebasestorage.app",
-        messagingSenderId: "925755238859",
-        appId: "1:925755238859:web:3a20876dc29a1603886e4e",
-        measurementId: "G-QCDMKVGYGT"
+            apiKey: "AIzaSyBbgEJstWzhmx4IINKDW6woGedOBXC0uyw",
+            authDomain: "forum-page-admin.firebaseapp.com",
+            databaseURL: "https://forum-page-admin-default-rtdb.firebaseio.com",
+            projectId: "forum-page-admin",
+            storageBucket: "forum-page-admin.firebasestorage.app",
+            messagingSenderId: "925755238859",
+            appId: "1:925755238859:web:3a20876dc29a1603886e4e",
+            measurementId: "G-QCDMKVGYGT"
         };
 
         // Initialize Firebase
@@ -96,14 +105,14 @@
                     content: content,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 })
-                .then(() => {
-                    document.getElementById('username').value = '';
-                    document.getElementById('content').value = '';
-                    loadPosts();
-                })
-                .catch((error) => {
-                    console.error("Error adding post: ", error);
-                });
+                    .then(() => {
+                        document.getElementById('username').value = '';
+                        document.getElementById('content').value = '';
+                        loadPosts();
+                    })
+                    .catch((error) => {
+                        console.error("Error adding post: ", error);
+                    });
             } else {
                 alert("Please fill in both fields.");
             }
@@ -150,13 +159,13 @@
                     text: commentText,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 })
-                .then(() => {
-                    commentInput.value = '';
-                    loadComments(postId);  // Reload comments to display the new comment
-                })
-                .catch((error) => {
-                    console.error("Error adding comment: ", error);
-                });
+                    .then(() => {
+                        commentInput.value = '';
+                        loadComments(postId);  // Reload comments to display the new comment
+                    })
+                    .catch((error) => {
+                        console.error("Error adding comment: ", error);
+                    });
             } else {
                 alert("Please enter a comment.");
             }
@@ -168,22 +177,23 @@
             commentListDiv.innerHTML = ''; // Clear existing comments
 
             db.collection('posts').doc(postId).collection('comments').orderBy('timestamp', 'asc').get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    const comment = doc.data();
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const comment = doc.data();
 
-                    commentListDiv.innerHTML += `
+                        commentListDiv.innerHTML += `
                         <div class="comment">
                             <div>${comment.text}</div>
                             <small>${new Date(comment.timestamp.seconds * 1000).toLocaleString()}</small>
                         </div>
                     `;
+                    });
                 });
-            });
         }
 
         // Load posts when the page loads
         window.onload = loadPosts;
     </script>
 </body>
+
 </html>
