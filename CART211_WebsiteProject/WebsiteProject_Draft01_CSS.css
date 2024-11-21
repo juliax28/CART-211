@@ -34,10 +34,7 @@ body {
 
 }
 
-.smallbow {
-    height: 15px;
-    width: 20px;
-}
+
 
 
 .button1 {
@@ -86,7 +83,7 @@ body {
 .ActivitySidebarPosition {
     display: flex;
     justify-content: right;
-    padding-right: 250px;
+
 }
 
 ul {
